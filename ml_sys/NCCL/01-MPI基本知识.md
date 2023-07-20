@@ -24,7 +24,7 @@ MPI(Message Passing Interface) 基本概念：
 - 通讯器（communicator）: 通讯器定义了一组能够互相发消息的进程。
 - 秩（rank）: 在这组进程中，每个进程会被分配一个序号，称作 rank ，进程间显性地通过指定秩来进行通信。
 - 标签（tag）: 通信的基础建立在不同进程间发送和接收操作。一个进程可以通过指定另一个进程的秩以及一个独一无二的消息来发送消息给另一个进程。接受者可以发送一个接收特定标签标记的消息的请求（或者也可以完全不管标签，接收任何消息），然后依次处理接收到的数据。
-- 2P 通信：涉及一个发送者以及一个接受者的通信。
+- P2P 通信：涉及一个发送者以及一个接受者的通信。
 - 集合通信（collective communications）：多个进程间通信。MPI 有专门的接口来帮我们处理相关的通信。
 
 ## P2P 通信
@@ -175,7 +175,7 @@ MPI_Allreduce(
     MPI_Comm communicator)
 ```
 
-![image_7](https://cdn.jsdelivr.net/gh/ZqtCtios/Image@master/sysml_master/ee08030329a7760826ad534f2983426e701aebb0c4392e529136d5a293df1ff0.png)  
+![image_7](https://cdn.jsdelivr.net/gh/ZqtCtios/Image@master/sysml_master/ee08030329a7760826ad534f2983426e701aebb0c4392e529136d5a293df1ff0.png)
 
 
 MPI_Allreduce 与 MPI_Reduce 相同，不同之处在于它不需要根进程 ID（因为结果分配给所有进程）。MPI_Allreduce 等效于先执行 MPI_Reduce，然后执行 MPI_Bcast。
