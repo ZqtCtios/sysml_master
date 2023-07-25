@@ -136,7 +136,6 @@ MPI_Allgather(
 
 ![image_6](https://cdn.jsdelivr.net/gh/ZqtCtios/Image@master/sysml_master/ba4a803876e395536fc275ef22ba5271c8b7f2e484dd6b04bda7bf5b4814ae72.png)  
 
-
 ```C
 MPI_Reduce(
     void* send_data,
@@ -176,7 +175,6 @@ MPI_Allreduce(
 ```
 
 ![image_7](https://cdn.jsdelivr.net/gh/ZqtCtios/Image@master/sysml_master/ee08030329a7760826ad534f2983426e701aebb0c4392e529136d5a293df1ff0.png)
-
 
 MPI_Allreduce 与 MPI_Reduce 相同，不同之处在于它不需要根进程 ID（因为结果分配给所有进程）。MPI_Allreduce 等效于先执行 MPI_Reduce，然后执行 MPI_Bcast。
 
